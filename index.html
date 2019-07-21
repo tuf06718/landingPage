@@ -1,0 +1,265 @@
+<html>
+
+<head>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <title>Howdy</title>
+    <link href="images/Me.png" rel="icon" />
+</head>
+
+<body>
+    <div id="iconsContainerLeft" style="display: none;">
+        <div class="icons" style="padding-top: 0px">
+            <a caption="LINKEDIN" onclick="window.open('https://www.linkedin.com/in/jonathan-k-a4b158b8')"><img
+                    src="images/LinkedIn.png" /></a> <br />
+            <a caption="SEND EMAIL" href="mailto: abc@example.com"><img src="images/Mail.png" /></a><br />
+            <a caption="GITHUB" onclick="window.open('https://github.com/tuf06718')"><img
+                    src="images/Github.png" /></a><br />
+            <a caption="RESUME" onclick="window.open('Jonathan Kaganovich Resume May 2019.pdf')"><img
+                    src="images/Resume.png" /></a>
+        </div>
+    </div>
+    <div id="play">
+        <img src="images/play.png" onclick="play()" />
+    </div>
+    <div id="audioContainer" style="display:none;">
+        <a onclick="closeAudio()" style="float:right;">X</a>
+        <p>UNTITLED BY ME</p>
+        <p>vocals sampled from old "learn russian"</br> cassette tape</p>
+        <audio controls loop id="myAudio">
+            <source src="8_18_18_3.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <div id="blogContainer">
+        <h2>Blog</h2>
+        <div class="newsContent">
+            <h3>July 18, 2019</h3>
+            <p>Hello visitors! Click on the icons below my 8-bit head to visit some of the sites I'm present on. Have a
+                great day!</p>
+
+        </div>
+        <br />
+        <div class="newsContent">
+            <h3>July 18, 2019</h3>
+            <p>P.s did you notice the icon on the top right?? I wonder what it does...</p>
+        </div>
+    </div>
+    <div id="mainContainer">
+        <div class="floating">
+            <img id="me" src="images/Me.png" />
+        </div>
+        <div id="headerContainer">
+            <h2>Jonathan Kaganovich</h2>
+            <h3>Software/Web Developer</h3>
+        </div>
+        <div id="iconsContainer">
+            <div class="icons">
+                <a caption="LINKEDIN" onclick="window.open('https://www.linkedin.com/in/jonathan-k-a4b158b8')"><img
+                        src="images/LinkedIn.png" /></a>
+                <a caption="SEND EMAIL" href="mailto: abc@example.com"><img src="images/Mail.png" /></a>
+                <a caption="GITHUB" onclick="window.open('https://github.com/tuf06718')"><img
+                        src="images/Github.png" /></a>
+                <a caption="RESUME" onclick="window.open('Jonathan Kaganovich Resume May 2019.pdf')"><img
+                        src="images/Resume.png" /></a>
+            </div>
+            <p id="caption"></p>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<style>
+    body {
+        background: -moz-linear-gradient(-45deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+        background: -webkit-linear-gradient(-45deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+        background: linear-gradient(135deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        overflow: unset
+    }
+
+    .newsContent {
+        background-color: black;
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+    }
+
+    #blogContainer {
+        width: 20%;
+        z-index: 5;
+        position: absolute;
+    }
+
+    #iconsContainer {
+        text-align: center;
+    }
+
+    #iconsContainerLeft {
+        float: left;
+    }
+
+    .icons {
+        padding-top: 40px;
+    }
+
+    #caption {
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        overflow: unset;
+        text-shadow: none;
+        color: black;
+    }
+
+    .icons>a>img {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+    }
+
+    .icons>a>img:hover {
+        -webkit-filter: drop-shadow(5px 5px 5px #222);
+        filter: drop-shadow(5px 5px 5px #222);
+    }
+
+    #audioContainer>img {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 0;
+    }
+
+    #play {
+        float: right;
+        z-index: 5;
+    }
+
+    #play>img {
+        width: 100px;
+        height: 100px;
+        opacity: .8;
+    }
+
+    #play>img:hover {
+        opacity: 1;
+    }
+
+    #audioContainer {
+        z-index: 5;
+        right: 0;
+        position: absolute;
+        text-align: center;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    #me {
+        width: 300px;
+        -webkit-filter: drop-shadow(5px 5px 5px #222);
+        filter: drop-shadow(5px 5px 5px #222);
+    }
+
+    #mainContainer {
+        text-align: center;
+        font-family: Verdana;
+        font-weight: bold;
+        color: #ccf7da;
+        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    }
+
+    .floating {
+        animation-name: floating;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        margin-left: 30px;
+        margin-top: 5px;
+        pointer-events: none;
+    }
+
+    @keyframes floating {
+        from {
+            transform: translate(0, 0px);
+        }
+
+        65% {
+            transform: translate(0, 15px);
+        }
+
+        to {
+            transform: translate(0, -0px);
+        }
+    }
+</style>
+
+<script>
+    window.onload = function () {
+
+
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            $('#blogContainer').hide();
+            if (window.innerWidth > window.innerHeight) {
+                $('#me').width('30%');
+                $('#iconsContainer').hide();
+                $('#iconsContainerLeft').show();
+            } else {
+                $('#me').width('70%');
+                $('h2').css('font-size', '3.5em');
+                $('h3').css('font-size', '3.0em');
+                $('p').css('font-size', '2.7em');
+                $('a').css('font-size', '2.7em');
+            }
+
+            $('audio').css({ 'width': '100%' });
+
+            var iconsIMG = $('.icons').find('img');
+            $.each(iconsIMG, function (index, value) {
+                $(value).css('width', $(value).width() * 2);
+                $(value).css('height', $(value).height() * 2);
+            });
+        }
+        if (isOverflown($('#caption'))) {
+            $('#caption').css('padding-bottom', '0px');
+        }
+        centerContent();
+        var icons = $('.icons').children();
+        $.each(icons, function (index, value) {
+            $(value).hover(function () {
+                $('#caption').text($(value).attr('caption'));
+                $('#caption').show();
+            }, function () {
+                $('#caption').hide();
+            });
+        });
+    }
+    window.onresize = function () {
+        location.reload();
+    }
+
+    $(window).on('orientationchange', function () {
+        location.reload();
+    });
+    
+    var centerContent = function () {
+        $('#mainContainer').css("padding-top", (window.innerHeight / 2) - ($('#mainContainer').height() / 2) + "px")
+    }
+
+    var play = function () {
+        $('#play').hide();
+        $('#audioContainer').show();
+    }
+
+    var closeAudio = function () {
+        $('#play').show();
+        document.getElementById('myAudio').pause();
+        $('#audioContainer').hide();
+    }
+
+    var isOverflown = function (element) {
+        return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+    }
+</script>
